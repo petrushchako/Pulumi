@@ -17,8 +17,10 @@
     * Work through the Go Tour exercises.
     * Write a few simple Go programs to practice the concepts.
 
-**Phase 2: Introduction to Pulumi Concepts (Estimated: 2-3 Days)**
 
+<br><br><br>
+
+**Phase 2: Introduction to Pulumi Concepts (Estimated: 2-3 Days)**
 * **Goal:** Understand the core concepts of Pulumi and how it approaches infrastructure as code.
 * **Topics:**
     * **Infrastructure as Code (IaC) Principles:** Briefly revisit why IaC is important.
@@ -39,8 +41,10 @@
     * Create a basic Pulumi project (you can choose a simple template like AWS Go).
     * Run `pulumi preview` without making any changes to understand the output.
 
-**Phase 3: Writing Infrastructure Code with Go (Estimated: 3-4 Days)**
 
+<br><br><br>
+
+**Phase 3: Writing Infrastructure Code with Go (Estimated: 3-4 Days)**
 * **Goal:** Learn how to define and manage infrastructure resources using the Pulumi Go SDK.
 * **Topics:**
     * **Pulumi Go SDK Structure:** Understanding packages and how to import provider SDKs (e.g., `github.com/pulumi/pulumi-aws/sdk/v6/go/aws`).
@@ -58,8 +62,10 @@
     * Modify the code to add more properties to the resource.
     * Deploy a second resource and observe the Pulumi plan.
 
-**Phase 4: Intermediate Pulumi Concepts and Go Integration (Estimated: 4-5 Days)**
 
+<br><br><br>
+
+**Phase 4: Intermediate Pulumi Concepts and Go Integration (Estimated: 4-5 Days)**
 * **Goal:** Explore more advanced Pulumi features and how they integrate with Go's capabilities.
 * **Topics:**
     * **Component Resources:** Creating reusable infrastructure abstractions using Go structs and functions.
@@ -78,8 +84,10 @@
     * Deploy multiple instances of a resource using a Go loop.
     * Implement basic configuration management for your infrastructure.
 
-**Phase 5: Applying Pulumi with Go to DevOps Scenarios (Ongoing)**
 
+<br><br><br>
+
+**Phase 5: Applying Pulumi with Go to DevOps Scenarios (Ongoing)**
 * **Goal:** Apply your Pulumi and Go skills to real-world DevOps tasks and workflows.
 * **Topics:**
     * **CI/CD Integration:** Automating Pulumi deployments in your CI/CD pipelines (e.g., GitLab CI, GitHub Actions).
@@ -96,8 +104,11 @@
     * Define the infrastructure for a small application using Pulumi and Go.
     * Explore Pulumi Policy as Code if it aligns with your team's needs.
 
-**Tips for Success:**
 
+
+<br><br><br>
+
+**Tips for Success:**
 * **Hands-on Practice is Key:** The more you code and deploy infrastructure with Pulumi and Go, the better you'll understand it.
 * **Start Small and Iterate:** Don't try to build everything at once. Begin with simple resources and gradually add complexity.
 * **Refer to the Documentation:** The official Pulumi and Go documentation are your best resources.
