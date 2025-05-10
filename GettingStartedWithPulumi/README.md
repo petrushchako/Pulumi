@@ -33,3 +33,43 @@ Managing cloud infrastructure can often be a challenge of wrangling obtuse confi
   - Varying Stack Details Using Configuration
   - Continuous Deployment and Temporary Environments
   - Course Review
+
+
+## Course Overview
+> Floyd May
+> Independent Software Crafter
+> @softwarefloyd canyon-trail.com
+
+### Course Overview
+Pulumi is a modern infrastructure as code (IaC) tool that allows developers to manage infrastructure using general-purpose programming languages.
+
+#### Supported Technologies
+Pulumi supports a wide range of technologies, including:
+
+* Amazon Web Services (AWS)
+* Google Cloud Platform (GCP)
+* Microsoft Azure
+* Kubernetes
+* PostgreSQL
+* And many more
+
+#### Supported Languages
+Pulumi enables you to define infrastructure using:
+
+* C#
+* Python
+* TypeScript
+* Go
+
+### What You Will Learn
+* Creating and destroying infrastructure resources
+* Managing dependency relationships between resources
+* Handling complexity as infrastructure scales
+* Integrating Pulumi with continuous deployment workflows
+
+### Prerequisites
+* Familiarity with at least one of the following languages: C#, TypeScript, or Python
+* Basic command-line skills
+
+### Course Outcome
+By the end of this course, you will have a solid understanding of how to manage infrastructure as code using Pulumi.
