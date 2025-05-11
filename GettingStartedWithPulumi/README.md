@@ -73,3 +73,45 @@ Pulumi enables you to define infrastructure using:
 
 ### Course Outcome
 By the end of this course, you will have a solid understanding of how to manage infrastructure as code using Pulumi.
+
+
+<hr><br><br><br>
+
+## Managing Resources with Relationships
+
+<br>
+
+## Introduction to Resource Dependencies
+### Overview
+This module focuses on using Pulumi to manage **multiple infrastructure resources** that have **dependency relationships** between them.
+
+### Use Case: Carved Rock Training Program Website
+We are working on deploying the front end of a static website and connecting it to a serverless back end.
+
+#### Goals
+* Host the website's **front end** in a **cloud storage bucket**
+* Incorporate a **serverless function** as the **back end** for dynamic functionality
+
+#### Technology Stack
+* **Cloud Provider:** Google Cloud Platform (GCP)
+  * Equivalent functionality exists in **AWS** and **Azure**
+  * Pulumi supports all of these providers equally
+
+### Current Status
+* The development team has built a **static website**
+* Future updates will introduce dynamic interactions with the back end
+
+### Implementation Steps
+1. **Create a cloud storage bucket**
+2. **Upload website assets** into the bucket:
+   * HTML
+   * CSS
+   * JavaScript
+   * Images
+
+### Key Concept: Resource Relationships
+* Each file (HTML, CSS, etc.) is treated as a **Pulumi-managed resource**
+* These files (bucket objects) **depend** on the existence of the bucket
+* Pulumi models and respects this **dependency** automatically
+
+<br><br><br>
