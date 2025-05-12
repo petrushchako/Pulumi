@@ -115,3 +115,56 @@ We are working on deploying the front end of a static website and connecting it 
 * Pulumi models and respects this **dependency** automatically
 
 <br><br><br>
+
+## Deployinh a Static HTML File
+### Project Structure
+The project is organized into two main directories:
+* **`frontend/`**
+  Contains the front-end application code. Currently, this includes:
+  * A `build/` folder with a placeholder file: `helloworld.html`
+* **`infrastructure/`**
+  Contains the Pulumi program for managing infrastructure.
+
+### Step-by-Step Deployment
+
+#### 1. Initialize the Pulumi Project
+* Navigate to the `infrastructure/` folder.
+* Run `pulumi new` and select the template: `gcp-csharp`
+* Project name: `carvedrock-training`
+* Provide a description and accept the default stack name.
+* Retrieve and set your GCP project ID in the configuration.
+
+#### 2. Configure the Pulumi Program
+* Open the generated C# program.
+* Rename the bucket resource to `frontend-files`.
+
+#### 3. Upload Front-End File to the Bucket
+* Goal: Upload `helloworld.html` from the `frontend/build/` folder to the bucket.
+
+##### File Upload Process
+* Use **`FileAsset`** to load the file.
+  `FileAsset` is part of the Pulumi API, allowing consistent file upload across cloud providers.
+* Create a **`BucketObject`** to represent the file inside the bucket.
+  * The Pulumi name of the object is separate from the actual object name in GCP.
+  * Use `BucketObjectArgs` to configure:
+    * `Name`: the target object name
+    * `Source`: set to the `FileAsset`
+    * `Bucket`: reference the `frontend-files` bucket
+
+#### 4. Deploy the Configuration
+* Run `pulumi up --yes` to apply the changes without manual confirmation.
+* Verify the deployment in the Google Cloud Console:
+
+  * Navigate to **Storage** → **frontend-files**
+  * Confirm that `helloworld.html` appears in the bucket
+
+#### 5. Public Access Limitation
+* Note: The uploaded file is not publicly accessible by default.
+* Although public access can be enabled via the Cloud Console Permissions UI, this goes against the principle of managing infrastructure through code.
+
+### Next Step
+To properly serve the static website to the public, access permissions will need to be handled declaratively through Pulumi rather than manually.
+
+<br><br><br>
+
+##
