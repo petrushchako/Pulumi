@@ -167,4 +167,81 @@ To properly serve the static website to the public, access permissions will need
 
 <br><br><br>
 
-##
+## Recovering from Failed Deployments
+### Granting Public Access with IAM Bindings in Pulumi
+#### Objective
+Make a static HTML file hosted in a Google Cloud Storage bucket publicly accessible by configuring appropriate IAM permissions using Pulumi.
+
+### Step-by-Step Process
+#### 1. Problem: File Not Yet Public
+* Although the HTML file is uploaded to the bucket, it is **not publicly accessible**.
+* Required: IAM binding to allow public access to objects in the bucket.
+
+<br>
+
+### 2. Adding a Bucket IAM Binding
+* A **Bucket IAM Binding** binds a role to members for a storage bucket.
+* Add the binding to the Pulumi C# program:
+  * Reference the correct bucket
+  * Use a **standard IAM role** like `roles/storage.objectViewer`
+  * Assign it to a **public member** like `allUsers`
+
+```csharp
+new BucketIAMBinding("publicReadBinding", new BucketIAMBindingArgs
+{
+    Bucket = bucket.Name, // correct bucket reference
+    Role = "roles/storage.objectViewer",
+    Members = { "allUsers" }
+});
+```
+
+<br>
+
+### 3. Common Mistake and Debugging
+#### Issue:
+* An error occurred when referencing the **bucket object** instead of the **bucket** itself.
+
+#### Error Message:
+```
+Error retrieving IAM policy for storage bucket b/helloworld.html
+```
+
+#### Resolution:
+* Correct the code to reference the actual bucket (not the file object inside the bucket).
+* Demonstrates a typical **trial-and-error** flow in Pulumi and Infrastructure as Code (IaC).
+
+<br>
+
+### 4. Deployment Conflict
+#### Scenario:
+* `pulumi up` was interrupted with `Ctrl+C`
+* On rerun, Pulumi throws:
+
+  ```
+  error: [409] Conflict: Another update is currently in progress
+  ```
+
+#### Fix:
+* Use the `pulumi cancel` command to clear the blocked update:
+  ```bash
+  pulumi cancel
+  ```
+* Enter the stack name when prompted.
+
+<br>
+
+### 5. Verifying Public Access
+* After successfully deploying the IAM binding:
+  * Check the bucket in GCP Console → should display **"Public to internet"**
+  * Copy the file URL and open it in:
+    * A regular browser tab (works)
+    * An incognito window (also works, confirms public access)
+
+<br>
+
+### 6. Team Considerations with `pulumi cancel`
+* Pulumi allows **only one update per stack** at a time.
+* Concurrent updates (e.g., from multiple developers or CI pipelines) are blocked to **prevent infrastructure corruption**.
+* `pulumi cancel` can be used to clear a stuck update regardless of origin:
+  * Be cautious using it in **team or CI environments**
+  * It can terminate active updates from others if misused
