@@ -74,12 +74,25 @@ Pulumi enables you to define infrastructure using:
 ### Course Outcome
 By the end of this course, you will have a solid understanding of how to manage infrastructure as code using Pulumi.
 
+<br><br><br>
+
+# **Your First Pulumi Project**
+
+## Version Check
+
+This version was created by using:
+  - Pulumi  
+  - Pulumi CLI 1.0.0
+  - Pulumi Provider Libraries 1.0.0
+
+
+
+
+
 
 <hr><br><br><br>
 
-## Managing Resources with Relationships
-
-<br>
+# Managing Resources with Relationships
 
 ## Introduction to Resource Dependencies
 ### Overview
