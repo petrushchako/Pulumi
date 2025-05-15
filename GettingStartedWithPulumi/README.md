@@ -284,8 +284,36 @@ Here is the Markdown-formatted summary of the lecture titled **Pulumi’s Declar
 
 Pulumi's declarative model simplifies infrastructure by letting you **focus on the "what"** rather than the "how", and handles the rest through **intelligent state tracking and updates**.
 
+<br><br><br>
 
 
+## Course Plan
+### Project Context
+* **Client**: Carved Rock Fitness
+* **Goal**: Launch a **new product offering**—users can **sign up for training sessions and excursions** with certified guides.
+* **Team Responsibility**: Use **Pulumi** to manage the **infrastructure** needed to support the web application.
+
+<br>
+
+### What You’ll Build with Pulumi
+By the end of the course, you'll have automated Pulumi infrastructure for:
+1. **Public-facing frontend website**
+2. **Backend services** with:
+   * **CORS configuration** to support frontend interactions
+3. **PostgreSQL database**
+4. **DNS configuration**
+5. **SSL certificates**
+6. Support for:
+   * **Production environments**
+   * **Staging/test environments**
+
+<br>
+
+### First Focus: Frontend Deployment
+* The course begins with building and deploying the **frontend website**.
+* Goal: Make the site publicly accessible and easily deployable using Pulumi.
+
+Pulumi will be used throughout to ensure **easy deployment**, **infrastructure updates**, and **environment consistency** for all environments—from dev to prod.
 
 
 
