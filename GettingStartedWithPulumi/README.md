@@ -132,7 +132,78 @@ Pulumi brings together:
 These two pillars make Pulumi a **powerful and flexible tool** for modern infrastructure development.
 
 
+<br><br><br>
 
+
+## Creating and Running a Pulumi Project
+### 1. **Pulumi Setup**
+* Go to **[pulumi.com](https://pulumi.com)** and click **Get Started**.
+* Choose your **cloud provider** (e.g., Google Cloud).
+* Follow platform-specific install instructions:
+  * **Windows**: Use **Chocolatey** (`choco install pulumi`)
+  * **macOS**: Use **Homebrew** (`brew install pulumi`)
+  * **Linux**: Use the **install script** provided
+
+<br>
+
+### 2. **Google Cloud Setup**
+* Ensure you have a **Google Cloud Project**:
+  * Visit: [console.cloud.google.com](https://console.cloud.google.com)
+  * Use the **drop-down menu** to create/select a project
+* Enable programmatic access:
+
+  * Default: Use `gcloud auth login`
+  * Recommended: Use a **Service Account** (link available in setup docs)
+
+<br>
+
+### 3. **Create a Pulumi Project**
+* Open a terminal and navigate to your project directory
+* Run:
+
+  ```bash
+  pulumi new
+  ```
+* Log in to Pulumi (free for personal use)
+* Choose the project template:
+  * Example: `gcp-csharp` (for C# on Google Cloud)
+* Enter:
+
+  * **Project name** (default = folder name)
+  * **Google Cloud project ID** (from GCP console)
+
+<br>
+
+### 4. **Deploying Infrastructure**
+* Run:
+
+  ```bash
+  pulumi up
+  ```
+* Pulumi shows a **preview** of actions (e.g., creating a storage bucket)
+* Confirm with `yes` to deploy
+* Verify the resource in Google Cloud Console under **Storage**
+
+<br>
+
+### 5. **Destroying Infrastructure**
+* Run:
+  ```bash
+  pulumi destroy
+  ```
+* This removes all Pulumi-managed resources
+* Confirm by checking the GCP console (e.g., bucket should be gone)
+
+<br>
+
+### Summary
+| Action            | Command          | Description                        |
+| ----------------- | ---------------- | ---------------------------------- |
+| Create project    | `pulumi new`     | Initializes a new Pulumi project   |
+| Deploy resources  | `pulumi up`      | Provisions cloud infrastructure    |
+| Destroy resources | `pulumi destroy` | Tears down deployed infrastructure |
+
+Pulumi makes it easy to define, preview, deploy, and destroy infrastructure using code in a language you're comfortable with.
 
 
 
